@@ -1,0 +1,605 @@
+/* ____________________________________________ */
+/*--------------basics of setup--------------  */
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html
+{
+    background-color: #fff;
+    color: #555;
+    font-family: 'Lato' , 'Arial' , 'sans-serif';
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+
+/* ____________________________________________ */
+/*--------------reuseable code--------------  */
+
+.row
+{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 60px 0px;
+}
+
+.box p
+{
+    line-height: 150%;
+    font-size: 90%;
+}
+
+h1,
+h2,
+h3
+{
+    text-transform: uppercase;
+}
+
+h1
+{
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #fff;
+    font-size: 240%;
+    word-spacing: 3px;
+    letter-spacing: 1px; 
+}
+
+h2
+{
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+}
+
+h2:after
+{
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    width: 100px;
+    content: " ";
+    margin: 5px auto;
+    margin-top: 30px;
+}
+
+h3
+{
+    font-size: 110%;
+    margin-bottom: 15px;
+}
+
+/* ____________________________________________ */
+/*--------------reuseable code--------------  */
+
+.icon-big
+{
+    font-size: 400%;
+    display: block;
+    color: #e67e22;
+    margin: 10px;
+}
+
+.small-icon
+{
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    /* secrete to balance text and icons */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -2px; 
+}
+
+a:link,
+a:visited
+{
+    color: #e67e22;
+    text-decoration: none;
+    padding-bottom: 1px;
+    border-bottom:1px solid #e67e22;
+    transition: border-bottom 0.2s , color 0.2;
+}
+
+a:hover,
+a:active
+{
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ____________________________________________ */
+/*--------------feature para--------------  */
+
+.long-copy
+{
+    line-height: 160%;
+    width: 70%;
+    margin-left: 15%;
+}
+
+.hero-text-box
+{
+    padding: 1%;
+}
+
+/* ____________________________________________ */
+/*--------------buttons--------------  */
+
+.btn:link,
+.btn:visited
+{
+    display: inline-block;
+    padding: 14px 30px;
+    text-decoration: none;
+    border-radius: 200px;
+    transition: background-color 0.2s , color 0.2s , border 0.2s; 
+    
+}
+
+.btn-full:link,
+.btn-full:visited
+{
+    background-color: #e67e22;
+    border-color: 1px solid #e67e22;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn-ghost:link,
+.btn-full:visited
+{
+    background-color: 1px solid #e67e22;
+    color: #e67e22;
+/*     color: rgb(230, 126, 34);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(230, 126, 34); */
+}
+
+.btn:hover,
+.btn:active
+{
+    background-color: #ef6d17;
+}
+
+.btn-full:hover,
+.btn-full:active
+{
+    background-color: #ef6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active
+{
+    background-color: #ef6d17;
+    color: #fff;
+}
+
+/* ____________________________________________ */
+/*--------------Header and its Content--------------  */
+
+/* #overlay
+{
+    background: #f0f0f0;
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    left: 0;
+    right: 0;
+    z-index: 999;
+} */
+.container
+{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50% );
+}
+.circle
+{
+    border-radius: 50%;
+}
+.big
+{
+    width: 300px;
+    height: 300px;
+    background: black;
+    border: solid 5px #0088ff;
+}
+.outermost
+{
+    width: 255px;
+    height: 255px;
+    border: solid 10px rgba(0, 0, 0, 0);
+    border-bottom: solid 10px #0088ff;
+    border-left: solid 10px #0088ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 3.5s linear infinite;
+}
+.outer
+{
+    width: 255px;
+    height: 255px;
+    border: solid 5px #0088ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 3.5s linear infinite;
+}
+.mid1
+{
+    width: 250px;
+    height: 250px;
+    border: solid 12px rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: spin2 2s linear infinite reverse;
+}
+.mid2
+{
+    width: 215px;
+    height: 215px;
+    border: solid 6px rgba(0, 0, 0, 0);
+    border-bottom: solid 6px #005aa8;
+    border-left: solid 6px #005aa8;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite reverse;
+}
+.mid3
+{
+    width: 205px;
+    height: 205px;
+    border: solid 30px rgba(0, 0, 0, 0);
+    border-bottom: solid 30px #0088ff4b;
+    border-left: solid 30px #0088ff4b;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin2 3.5s linear infinite;
+}
+.inner
+{
+    width: 140px;
+    height: 140px;
+    border: solid 5px #0088ff;
+    border-bottom: solid 6px #00000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: spin2 2s linear infinite;
+
+}
+.innermost3
+{
+    width: 35px;
+    height: 35px;
+    border: solid 13px #0088ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.innermost2
+{
+    width: 80px;
+    height: 80px;
+    border: solid 13px #0088ff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.innermost1
+{
+    width: 115px;
+    height: 115px;
+    border: solid 13px #0088ff;
+    border-top: solid 13px #00000000;
+    border-bottom: solid 13px #00000000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+
+}
+@keyframes spin
+{
+    0%
+    {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+@keyframes spin2
+{
+    0%
+    {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+    100%
+    {
+        transform: translate(-50%, -50%) rotate(405deg);
+    }
+}
+
+
+header
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+}
+
+.hero-text-box
+{
+    position: absolute;
+    width: 1140px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+
+/* ________________________________________________ */
+/* -------------logo settings---------------------- */
+
+.logo
+{
+    height: 100px;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav
+{
+    float: right;
+    list-style: none;
+    margin-top: 30px;
+}
+
+.main-nav li
+{
+    display: inline-block;
+    /*margin-left: auto; */
+}
+
+.main-nav li a:link,
+.main-nav li a:visited
+{
+    padding: 30px , 0px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 90%;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active
+{
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ________________________________________________ */
+/* -------------features---------------------- */
+
+.section-features .long-copy
+{
+    margin-bottom: 30px; 
+}
+
+/* ________________________________________________ */
+/* -------------meal pics---------------------- */
+
+.section-meal
+{
+    padding: 0;
+}
+
+.meal-showcase
+{
+    list-style: none;
+    width: 100%;
+}
+
+.meal-showcase li
+{
+ display: block;
+ float: left;
+ width: 25%;   
+}
+
+.meal-pic
+{
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+.meal-pic img
+{
+    opacity: 0.7;
+    width: 100%;
+    height: auto;
+    transform: scale(1.15);
+    transition: transform 0.5s , opacity 0.5s;
+}
+
+.meal-pic img:hover
+{
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* clearfix class */
+
+.clearfix {zoom: 1 }
+.clearfix:after
+{
+   content: '.';
+   clear: both;
+   display: block;
+   height: 0;
+   visibility: hidden; 
+}
+
+/* ________________________________________________ */
+/* -------------steps---------------------- */
+
+.section-steps
+{
+    background-color: #f4f4f4;
+}
+
+.steps-box:first-child
+{
+    text-align: right;
+    padding-right: 3%;
+    margin-top: 30px;
+} 
+
+.steps-box:last-child
+{
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.btn-app:link,
+.btn-app:visited
+{
+    border: 0;
+}
+
+.app-screen
+{
+    width: 40%;
+}
+
+.work-steps
+{
+    margin-bottom: 50px;
+}
+
+.work-steps:last-of-type
+{
+    margin-bottom: 80px
+}
+
+.work-steps div
+{
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.btn-app img
+{
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+}
+
+/* boxes */
+
+.box img
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px; 
+}
+
+.city-feature
+{
+    margin-bottom: 5px;
+}
+
+/* customers */
+
+.section-test
+{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/back-customers.jpg');
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+
+}
+
+blockquote
+{
+    padding: 2%;
+    font-style: italic;
+    line-height: 150%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote:before
+{
+    content: "\201C";
+    font-size: 500%;
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+}
+
+blockquote:after
+{
+    content: "\201C";
+    font-size: 400%;
+}
+
+cite
+{
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;
+}
+
+cite img
+{
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
